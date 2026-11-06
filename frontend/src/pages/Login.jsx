@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
 function Login() {
+  const navigate = useNavigate();
+
   const [isRegister, setIsRegister] = useState(false);
 
   const [email, setEmail] = useState('');
@@ -19,23 +22,32 @@ function Login() {
 
   // LOGIN FUNCTION
   const handleLogin = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    setError('');
-    setSuccess('');
+  setError('');
+  setSuccess('');
 
-    if (!email || !password) {
-      setError('Please enter email and password');
-      return;
-    }
+  if (!email || !password) {
+    setError('Please enter email and password');
+    return;
+  }
 
-    if (password.length < 6) {
-      setError('Password must contain at least 6 characters');
-      return;
-    }
+  if (password.length < 6) {
+    setError('Password must contain at least 6 characters');
+    return;
+  }
 
-    setSuccess('Login form submitted successfully!');
+  // Temporary testing only
+  const userData = {
+    name: "Admin",
+    email: email,
+    role: "ADMIN"
   };
+
+  localStorage.setItem("user", JSON.stringify(userData));
+
+  navigate("/dashboard");
+};
 
   // REGISTER FUNCTION
   const handleRegister = (e) => {
