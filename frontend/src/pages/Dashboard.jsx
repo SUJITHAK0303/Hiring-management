@@ -5,14 +5,19 @@ import "../styles/Dashboard.css";
 function Dashboard() {
   const navigate = useNavigate();
 
-  const user = JSON.parse(localStorage.getItem("user") || "null");
+  const savedUser =
+    localStorage.getItem("user") ||
+    sessionStorage.getItem("user");
+
+  const user = savedUser ? JSON.parse(savedUser) : null;
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     navigate("/");
   };
 
-  if (!user || user.role !== "ADMIN") {
+  if (!user || user.role !== "MANAGER") {
     return (
       <div className="access-denied">
         <h2>Access Denied</h2>
@@ -25,42 +30,68 @@ function Dashboard() {
     <div className="dashboard-container">
 
       <aside className="sidebar">
+
         <h2 className="dashboard-logo">
           <span>Pro</span>Hire
         </h2>
 
         <p className="menu-heading">MAIN MENU</p>
 
-        <button className="menu-item active">Dashboard</button>
-        <button className="menu-item">User Management</button>
-        <button className="menu-item">Master Management</button>
-        <button className="menu-item">RFH Management</button>
+        <button className="menu-item active">
+          Dashboard
+        </button>
 
-        <button className="logout-button" onClick={handleLogout}>
+        <button className="menu-item">
+          User Management
+        </button>
+
+        <button
+  className="menu-item"
+  onClick={() => navigate("/add-rfh")}
+>
+  RFH Management
+</button>
+
+        <button
+          className="logout-button"
+          onClick={handleLogout}
+        >
           Logout
         </button>
+
       </aside>
 
       <main className="dashboard-main">
 
         <header className="dashboard-header">
+
           <div>
-            <h1>Dashboard</h1>
+            <h1>Manager Dashboard</h1>
             <p>Welcome to ProHire Hiring Management System</p>
           </div>
 
           <div className="admin-profile">
-            <div className="profile-circle">A</div>
-            <div>
-              <h4>{user.name}</h4>
-              <span>Administrator</span>
+
+            <div className="profile-circle">
+              {(user.fullName || user.name || "M")
+                .charAt(0)
+                .toUpperCase()}
             </div>
+
+            <div>
+              <h4>{user.fullName || user.name}</h4>
+              <span>Manager</span>
+            </div>
+
           </div>
+
         </header>
 
         <section className="welcome-card">
           <h2>Welcome to ProHire!</h2>
-          <p>Manage your hiring activities from one place.</p>
+          <p>
+            Manage your hiring activities from one place.
+          </p>
         </section>
 
         <section className="dashboard-cards">
