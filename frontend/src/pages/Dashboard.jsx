@@ -41,9 +41,12 @@ function Dashboard() {
           Dashboard
         </button>
 
-        <button className="menu-item">
-          User Management
-        </button>
+        <button
+  className="menu-item"
+  onClick={() => navigate("/user-management")}
+>
+  User Management
+</button>
 
         <button
   className="menu-item"

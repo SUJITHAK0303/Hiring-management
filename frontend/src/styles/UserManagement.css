@@ -1,0 +1,326 @@
+
+.user-management-container {
+  padding: 30px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.user-management-header {
+  margin-bottom: 25px;
+}
+
+.user-management-header h1 {
+  color: #1e293b;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.user-management-header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.management-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.management-btn {
+  padding: 12px 24px;
+  border: 1px solid #dbe2ea;
+  background: white;
+  color: #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.management-btn:hover,
+.management-btn.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.add-user-section,
+.user-list-section,
+.placeholder-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.add-user-section h2,
+.user-list-section h2,
+.placeholder-section h2 {
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.add-user-section p,
+.user-list-section p,
+.placeholder-section p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.cancel-btn,
+.save-user-btn {
+  padding: 12px 22px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.save-user-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.save-user-btn:hover {
+  background: #1d4ed8;
+}
+
+.empty-user-list {
+  text-align: center;
+  padding: 45px 15px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.empty-user-list h3 {
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.empty-user-list p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 650px) {
+  .user-management-container {
+    padding: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .management-buttons {
+    gap: 8px;
+  }
+
+  .management-btn {
+    padding: 10px 14px;
+  }
+}
+
+.user-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.user-table th {
+  background: #f8fafc;
+  color: #374151;
+  font-weight: 600;
+}
+
+.user-table td {
+  color: #4b5563;
+}
+
+.status-active {
+  color: #15803d;
+  background: #dcfce7;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.user-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.success-message {
+  color: green;
+  margin: 15px 0;
+}
+
+.error-message {
+  color: red;
+  margin: 15px 0;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.team-header h2 {
+  margin-bottom: 8px;
+}
+
+.team-form {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.team-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.team-list {
+  margin-top: 30px;
+}
+
+.team-list h3 {
+  margin-bottom: 15px;
+}
+
+.user-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.success-message {
+  color: green;
+  margin: 15px 0;
+}
+
+.error-message {
+  color: red;
+  margin: 15px 0;
+}
